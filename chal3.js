@@ -9,10 +9,12 @@ const sarahBalance = "-4582.21000111";
 const divider = "----------------------------------";
 
 // Only change below this line
-const owed = (parseInt(leoBalance) + parseFloat(sarahBalance)) * -1;
+const owed = ((parseInt(leoBalance) + parseFloat(sarahBalance)) * -1).toFixed(2);
+const owedText = owed.toString();
+const owedSpace = `${owedText.slice(0, 2)} ${owedText.slice(2)}`;
 const leo = `${leoName} ${leoSurname.replace(/ /g, "")} (Owed: R ${(parseInt(leoBalance)*-1).toFixed(2)})`;
 const sarah = `${sarahName.replace(/ /g, "")} ${sarahSurname} (Owed: R ${(parseFloat(sarahBalance)*-1).toFixed(2)})`;
-const total = `Total amount owed: R ${owed.toFixed(2)}`;
+const total = `Total amount owed: R ${owedSpace}`;
 const result = `${leo}
 ${sarah}
 
